@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Roboto:wght@700&display=swap');
+
+
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+body{
+    font-family: nunito;
+}
+
+.container{
+    background-color: #F5F5F5;
+    max-width: 1920px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.container > div{
+    background: #eee;
+}
+
+.top{
+    background-color: #7025FB;
+}
