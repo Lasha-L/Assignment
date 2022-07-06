@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/css/style2.css" />
+    <link rel="stylesheet" href="css/style2.css" />
   </head>
   <body>
     <div class="container">
       <div class="left-top">
-        <h3><img src="/icons/Vector1.png" alt="logo" /> Redberry Knight Cup</h3>
+        <h3><img src="icons/Vector1.png" alt="logo" /> Redberry Knight Cup</h3>
       </div>
 
       <div class="right-top">
@@ -18,7 +18,7 @@
       </div>
 
       <div class="left-bottom">
-        <img src="/images/unsplash_27LH_0jXKYI.png" alt="unsplash" />
+        <img src="images/unsplash_27LH_0jXKYI.png" alt="unsplash" />
         <div class="quote">
           <p>
             "WHEN YOU SEE A GOOD MOVE,<br />
@@ -32,17 +32,23 @@
       <div class="right-bottom">
         <div class="progress-bar-container">
           <div class="progress-container">
-            <div class="progress" id="progress">
-              <div class="square active">1</div>
-              <div class="square">2</div>
-            </div>
+            <div class="square active">1</div>
+            <div class="progress" id="progress"></div>
+            <div class="square">2</div>
           </div>
-          <span id="info-header-1">Personal information</span>
-          <span id="info-header-2">Chess experience</span>
+          <br />
+          <!--
+          <div class="progress-text">
+            <span id="info-header-1">Personal information</span>
+            <span id="info-header-2">Chess experience</span>
+          </div>-->
         </div>
-        <h1>Personal information</h1>
-        <p>This is Basic information Fields</p>
-        <form class="my-form">
+        <div class="header">
+          <h1>Personal information</h1>
+          <p>This is Basic information Fields</p>
+        </div>
+
+        <form class="sign-up-form">
           <div class="form-group">
             <input type="text" placeholder="Name" checked />
           </div>
@@ -71,14 +77,14 @@
             />
           </div>
 
-          <div class="form-group">
-            <button id="previous">
+          <div class="button-group">
+            <button class="button" id="previous">
               <span class="button-text">Back</span>
             </button>
-            <button id="next">
+            <button class="button" id="next">
               <span class="button-text">Next</span>
               <span class="button-icon">
-                <img src="/icons/Vector2.png" alt="click" />
+                <img src="icons/Vector2.png" alt="click" />
               </span>
             </button>
           </div>
