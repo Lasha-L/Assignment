@@ -50,19 +50,19 @@
           <p>This is Basic information Fields</p>
         </div>
 
-        <form class="sign-up-form">
+        <form class="sign-up-form" action="javascript:0">
           <div class="form-group">
-            <input type="text" placeholder="Name" minlength="2" checked />
+            <input type="text" placeholder="Name *" minlength="2" checked />
           </div>
 
           <div class="form-group">
-            <input type="email" placeholder="Email address" checked />
+            <input type="email" placeholder="Email address *" checked />
           </div>
           <div class="form-group">
             <input
               type="tel"
               name="Phone-number"
-              placeholder="Phone number"
+              placeholder="Phone number *"
               minlength="9"
               maxlength="9"
               onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
@@ -72,7 +72,7 @@
           <div class="form-group">
             <input
               type="date"
-              placeholder="dd-mm-yyyy"
+              placeholder="Date of birth *"
               value=""
               min="01-01-1930"
               max="31-12-2006"
@@ -81,10 +81,15 @@
           </div>
 
           <div class="button-group">
-            <button class="button" id="previous">
+            <button class="button" id="previous" onclick="history.go(-1)">
               <span class="button-text">Back</span>
             </button>
-            <button class="button" id="next">
+            <button
+              type="submit"
+              class="button"
+              id="next"
+              onclick="myFunction()"
+            >
               <span class="button-text">Next</span>
               <span class="button-icon">
                 <img src="./icons/Vector2.png" alt="click" />
@@ -92,6 +97,14 @@
             </button>
           </div>
         </form>
+        <div class="error hidden">
+          <div class="header">
+            <img src="./icons/Vector!.png" alt="warning" />
+            <div id="warning-header">Invalid email</div>
+            <img src="./icons/Vector (2).png" alt="close" id="close" />
+          </div>
+          <p id="warning-text">Please enter valid email address</p>
+        </div>
       </div>
     </div>
     <script src="./js/register1.js"></script>
