@@ -1,22 +1,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Roboto:wght@700&display=swap');
 
 
-body{
-    font-family: nunito;
+
+.quote {
+    position:absolute;
+    top: 356.4px;
+    left: 345.6px;
+    transform: translate(-50%, -50%);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 34px;
+    color: #212529;
+    text-transform: uppercase;
 }
 
-.container{
-    background-color: #F5F5F5;
-    max-width: 1920px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
+.quote p{
+    text-align: right;
+    font-family: 'Nunito', sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #093F68;
 }
 
-.container > div{
-    background: #eee;
+.my-form{
+    padding: 57px;
+    margin-top: 20px;
 }
 
-.top{
-    background-color: #7025FB;
+.exp-form{
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+    height: 46px;
+    padding-bottom: 100px;
 }
+
+.exp-form select{
+    width: 392px;
+    height: 46px;
+    border: none;
+    background: #FFFFFF;
+
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.125);
+    border-radius: 4px;
+
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.my-form label{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.my-form p{
+    padding-top: 10px;
+    font-size:16px;
+}
+

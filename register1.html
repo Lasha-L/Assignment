@@ -37,11 +37,11 @@
             <div class="square">2</div>
           </div>
           <br />
-          <!--
+
           <div class="progress-text">
             <span id="info-header-1">Personal information</span>
             <span id="info-header-2">Chess experience</span>
-          </div>-->
+          </div>
         </div>
         <div class="header">
           <h1>Personal information</h1>
@@ -50,13 +50,23 @@
 
         <form class="sign-up-form">
           <div class="form-group">
-            <input type="text" placeholder="Name" checked />
+            <input type="text" placeholder="Name" minlength="2" checked />
           </div>
 
           <div class="form-group">
             <input type="email" placeholder="Email address" checked />
           </div>
-
+          <div class="form-group">
+            <input
+              type="tel"
+              name="Phone-number"
+              placeholder="Phone number"
+              minlength="9"
+              maxlength="9"
+              onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+              checked
+            />
+          </div>
           <div class="form-group">
             <input
               type="date"
@@ -64,15 +74,6 @@
               value=""
               min="01-01-1930"
               max="31-12-2006"
-              checked
-            />
-          </div>
-
-          <div class="form-group">
-            <input
-              type="tel"
-              name="Phone-number"
-              placeholder="Phone number"
               checked
             />
           </div>
@@ -91,6 +92,6 @@
         </form>
       </div>
     </div>
-    <script src="js/register.js"></script>
+    <script src="js/register1.js"></script>
   </body>
 </html>

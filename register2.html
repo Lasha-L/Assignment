@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/css/style2.css" />
     <link rel="stylesheet" href="/css/style3.css" />
   </head>
   <body>
@@ -21,71 +22,75 @@
         
         <div class="left-bottom">
           <img src="/images/unsplash_27LH_0jXKYI (1).png" alt="unsplash" />
-          <blockquote cite="">
-            <p id="quotas">
+          <div class="quote">
+            <h6>
               "MANY HAVE BECOME CHESS MASTERS;<br />NO ONE HAS BECOME THE MASTER
               OF CHESS."
-            </p>
+            </h6>
             <br />
-            <cite id="quotas">-SIEGBERT TARRASCH</cite>
-          </blockquote>
+            <p>-SIEGBERT TARRASCH</p>
+          </div>
         </div>
 
+        
+
         <div class="right-bottom">
-          <div>
-            <span id="info-1">1</span>
-            <span id="info-2">2</span>
+          <div class="progress-bar-container">
+            <div class="progress-container">
+              <div class="square active">1</div>
+              <div class="progress" id="progress"></div>
+              <div class="square">2</div>
+            </div>
+            <br />
+  
+            <div class="progress-text">
+              <span id="info-header-1">Personal information</span>
+              <span id="info-header-2">Chess experience</span>
+            </div>
           </div>
-          <div>
-            <span id="info-1">Personal information</span>
-            <span id="info-2">Chess experience</span>
+          <div class="header">
+            <h1>Chess experience</h1>
+            <p>This is Basic information Fields</p>
           </div>
-          <h1>Chess experience</h1>
-          <p>This is Basic information Fields</p>
+          
           <form class="my-form">
-            <span>
+            <div class="exp-form">
               <select>
                 <option value="level of knowledge" selected>Beginner</option>
-                <option value="level of knowledge" selected>
-                  Intermediate
-                </option>
-                <option value="level of knowledge" selected>
-                  Professional
-                </option>
+                <option value="level of knowledge">Intermediate</option>
+                <option value="level of knowledge">Professional</option>
               </select>
-            </span>
-
-            <span>
+            
               <select>
-                <option value="Magnus Carlsen" data-description="/icons/Magnus Carlsen.png" selected>
-                  Magnus Carlsen
-                </option>
-                <option value="Joan doe" selected>Joan doe</option>
-                <option value="Joan doe" selected>Joan doe</option>
-                <option value="Other" selected>Other</option>
+                <option value="Magnus Carlsen" data-description="/icons/Magnus Carlsen.png" selected>Magnus Carlsen</option>
+                <option value="Joan doe" >Joan doe</option>
+                <option value="Nona Gafrindashvili" >Nona Gafrindashvili</option>
+                <option value="Other" >Other</option>
               </select>
-            </span>
+            </div>
 
             <div>
               <label for="yes_no_radio">Have you participated in the Redberry Championship?</label>
-              <p><input type="radio" name="yes_no" checked>Yes</input>
-                <input type="radio" name="yes_no">No</input></p>
-                
+              <p>
+                <input type="radio" name="yes-no" checked> Yes</input>
+                <input type="radio" name="yes-no"> No</input>
+              </p>
             </div>
 
-            <div class="form-group">
-              <button>
+            <div class="button-group">
+              <button class="button" id="previous">
                 <span class="button-text">Back</span>
               </button>
-              <button>
-                <span class="button-text">Done</span>
+              <button class="button" id="next">
+                <span class="button-text">Next</span>
                 <span class="button-icon">
-                  <img src="/icons/Vector2.png" alt="click" />
+                  <img src="icons/Vector2.png" alt="click" />
                 </span>
               </button>
             </div>
           </form>
         </div>
-    </div>
+      </div>
+    <script src="js/register2.js"></script>
   </body>
 </html>

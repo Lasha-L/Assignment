@@ -54,7 +54,7 @@ body {
 }
 
 .right-top p {
-  font-family: 'Open Sans';
+  font-family: 'Nunito';
   font-weight: 600;
   margin-left: 60px;
   margin-top: 30px;
@@ -109,6 +109,19 @@ body {
   color: #212529;
 }
 
+.progress-text{
+  text-align: left;
+  margin-top: -15px;
+  margin-left: 57px;
+  width:450px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Nunito';
+  font-weight: 400;
+  font-size: 16px;
+}
+
+
 .header{
   font-family: 'Nunito', sans-serif;
   margin-left: 57px;
@@ -148,6 +161,11 @@ body {
   font-size: 20px;
 }
 
+.form-group input:invalid{
+  background-color: #FFEFEF;
+  color:#DC3545;
+}
+
 .form-group input:hover{
   background-color: #F8F9FA;
   color:rgba(33, 37, 41, 0.5);
@@ -155,7 +173,8 @@ body {
 
 .button-group{
   align-items: center;
-  padding-top:70px;
+  position: absolute;
+  top: 840px;
   width: 800px;
   height: 61px;
   display: flex;
