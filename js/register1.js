@@ -1,24 +1,93 @@
-const username = document.getElementById("name")
-const email = document.getElementById("email")
-const phoneNumber = document.getElementById("phone")
-const birthdate = document.getElementById("date")
-const form = document.getElementById("sign-up-form")
+const popupError = document.getElementById("error")
+const closeError = document.getElementById("close-error")
+const correctInput_1 = document.getElementById("correct-1")
+const correctInput_2 = document.getElementById("correct-2")
+const correctInput_3 = document.getElementById("correct-3")
+const correctInput_4 = document.getElementById("correct-4")
 
-form.addEventListener('submit', (e)=>{
-    let popupError = document.querySelector('.error');
+closeError.onclick = function(){
+    popupError.style.display = 'none'
+}
 
-    if(username.value === '' || username.value === null){
-        popupError.classList.toggle('active');
+function validateName(){
+    var name_val = document.getElementById("name").value
+
+    if(name_val.length < 2 || !name_val.match(/^[A-Za-z]+$/)){
+        document.getElementById("warning-header").innerHTML = "Invalid name"
+        document.getElementById("warning-text").innerHTML = "Please enter valid name"
+        displayError()
+        return false
     }
+    /* make green tick sign apear */
+    popupError.style.display = 'none'
+    correctInput_1.style.display = 'block'
+    return true
+}
 
-    if(messages.length>2){
-        e.preventDefault()
-        errorElement.innerText = messages.join(', ')
+function validateEmail(){
+    var email_val = document.getElementById("email").value
+
+    if(email_val.length == 0 || !email_val.match(/^[A-Za-z][a-z0-9_.]*@redberry.ge$/)){
+        document.getElementById("warning-header").innerHTML = "Invalid email"
+        document.getElementById("warning-text").innerHTML = "Please enter valid email address"
+        displayError()
+        return false
     }
-})
+    /* make green tick sign apear */
+    popupError.style.display = 'none'
+    correctInput_2.style.display = 'block'
+    return true
+}
 
 
+function validatePhone(){
+    var Phone_val = document.getElementById("email").value
 
+    if(Phone_val.length < 9){
+        document.getElementById("warning-header").innerHTML = "Invalid phone number"
+        document.getElementById("warning-text").innerHTML = "Please enter valid phone number"
+        displayError()
+        return false
+    }
+    /* make green tick sign apear */
+    popupError.style.display = 'none'
+    correctInput_3.style.display = 'block'
+    return true
+}
+
+/* date input needs fixing */
+function validateDate(){
+    var date_val = document.getElementById("date").value
+
+    if(document.getElementById("date").valid){
+        document.getElementById("warning-header").innerHTML = "Invalid date of birth"
+        document.getElementById("warning-text").innerHTML = "Please enter valid date of birth"
+        displayError()
+        return false
+    }
+    /* make green tick sign apear */
+    popupError.style.display = 'none'
+    correctInput_4.style.display = 'block'
+    return true
+}
+
+function validateForm(){
+    if(!validateName()||!validateEmail()||!validatePhone()||!validateDate()){
+        document.getElementById("warning-header").innerHTML = "Invalid input"
+        document.getElementById("warning-text").innerHTML = "Please enter valid data"
+        return false
+    }
+    return true
+}
+
+function displayError(){
+    popupError.style.display = 'block'
+}
+
+
+document.getElementById("previous").onclick = function(){
+    location.href = "index.html"
+}
 
 
 
@@ -34,39 +103,14 @@ document.getElementById("next").onclick = function(){
     }
 }
 
-
-
-function inputCheck(){
-
-}
-
+const name = document.getElementById("name")
+const email = document.getElementById("email")
+const phone = document.getElementById("phone")
+const date = document.getElementById("date")
 
 document.getElementById("next").onclick = function(){
     location.href = "register2.html"
 }
 
+
 */
-
-
-
-
-
-
-
-
-
-document.getElementById("previous").onclick = function(){
-    location.href = "index.html"
-}
-
-document.getElementById("warning-header").innerHTML = "Invalid name"
-document.getElementById("warning-text").innerHTML = "Please enter valid name"
-
-document.getElementById("warning-header").innerHTML = "Invalid email"
-document.getElementById("warning-text").innerHTML = "Please enter valid email address"
-
-document.getElementById("warning-header").innerHTML = "Invalid phone number"
-document.getElementById("warning-text").innerHTML = "Please enter valid phone number"
-
-document.getElementById("warning-header").innerHTML = "Invalid date of birth"
-document.getElementById("warning-text").innerHTML = "Please enter valid date of birth"

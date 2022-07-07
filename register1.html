@@ -54,43 +54,55 @@
           <div class="form-group">
             <input
               type="text"
+              class="input"
               id="name"
               placeholder="Name *"
               minlength="2"
+              onfocusout="validateName()"
               checked
             />
+            <img id="correct-1" src="./icons/Vector.png" alt="correct" />
           </div>
 
           <div class="form-group">
             <input
               type="email"
+              class="input"
               id="email"
               placeholder="Email address *"
+              onfocusout="validateEmail()"
               checked
             />
+            <img id="correct-2" src="./icons/Vector.png" alt="correct" />
           </div>
           <div class="form-group">
             <input
               type="tel"
+              class="input"
               name="Phone-number"
               id="phone"
               placeholder="Phone number *"
               minlength="9"
               maxlength="9"
+              onfocusout="validatePhone()"
               onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
               checked
             />
+            <img id="correct-3" src="./icons/Vector.png" alt="correct" />
           </div>
           <div class="form-group">
             <input
               type="date"
+              class="input"
               id="date"
               placeholder="Date of birth *"
               value=""
               min="01-01-1930"
               max="31-12-2006"
+              onfocusout="validateDate()"
               checked
             />
+            <img id="correct-4" src="./icons/Vector.png" alt="correct" />
           </div>
 
           <div class="button-group">
@@ -105,16 +117,21 @@
             </button>
           </div>
         </form>
-        <div class="error">
+        <div class="error" id="error">
           <div class="header">
             <img src="./icons/Vector!.png" alt="warning" />
             <div id="warning-header">Invalid email</div>
-            <img src="./icons/Vector (2).png" alt="close" id="close" />
+            <img
+              id="close-error"
+              src="./icons/Vector (2).png"
+              alt="close"
+              id="close"
+            />
           </div>
           <p id="warning-text">Please enter valid email address</p>
         </div>
       </div>
     </div>
-    <script src="./js/register1.js"></script>
+    <script src="js/register1.js"></script>
   </body>
 </html>
