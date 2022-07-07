@@ -33,28 +33,138 @@
 .exp-form{
     display: flex;
     justify-content: space-between;
+    overflow: hidden;
     width: 800px;
     height: 46px;
-    padding-bottom: 100px;
+    padding-bottom: 125px;
 }
-
-.exp-form select{
+/* change happend from here
+ ****************************/
+.exp-form .select{
     width: 392px;
     height: 46px;
+}
+.exp-form .select::before{
+    content: '';
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    z-index: 10000;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #333333;
+    border: 2px solid #FFFFFF;
+    border-right: 2px solid #FFFFFF;
+    transform: rotate(-45deg);
+    transition: 0.5s;
+    pointer-events: none;
+}
+.exp-form .select::before{
+    top: 22px;
+    transform: rotate(-225deg);
+}
+
+.exp-form .select input{
+    width: 100%;
+    height: 100%;
     border: none;
     background: #FFFFFF;
 
     box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.125);
     border-radius: 4px;
 
+    cursor: pointer;
     font-family: 'Nunito', sans-serif;
     font-weight: 400;
     font-size: 20px;
+
+    padding: 12px 20px;
 }
+
+.exp-form .select .option-level{
+    position: absolute;
+    top: 545px;
+    width: 392px;
+    height: 199px;
+    margin-left: 10px;
+    background: #FFFFFF;
+    border: 1px solid rgba(185, 180, 196, 0.3);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    display: none;
+}
+.exp-form .select.active .option-level{
+    display: block;
+}
+.exp-form .select .option-level div{
+    padding: 20px 20px;
+    cursor: pointer;
+    color: #212529;
+    font-family: 'Nunito','Open Sans',sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+.exp-form .select .option-level div:hover{
+    background: #F7F7F9;
+    color:#000000;
+}
+
+.exp-form .select .option-character{
+    position: absolute;
+    top: 545px;
+    width: 392px;
+    height: 419px;
+    margin-left: 10px;
+    background: #FFFFFF;
+    border: 1px solid rgba(185, 180, 196, 0.3);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    display: none;
+}
+.exp-form .select.active .option-character{
+    display: block;
+}
+.exp-form .select .option-character p{
+    font-family: 'Nunito',sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color:#817D7D;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.exp-form .select .option-character div{
+    padding: 32px 20px;
+    cursor: pointer;
+    color: #212529;
+    font-family: 'Nunito','Open Sans',sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+.exp-form .select .option-character div:hover{
+    background: #F7F7F9;
+    color:#000000;
+}
+
+/* to here 
+ *****************************/
 .my-form label{
     font-family: 'Nunito', sans-serif;
     font-weight: 400;
     font-size: 20px;
+}
+
+#experience option{
+    width: 392px;
+    height: 199px;
+    left: 0px;
+    top: 0px;
+
+    background-color: #FFFFFF;
+    border: 1px solid rgba(185, 180, 196, 0.3);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
 }
 
 .my-form p{

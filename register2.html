@@ -54,19 +54,28 @@
           </div>
           
           <form class="my-form">
+            <!-- Drop down needs a fixing from here-->
             <div class="exp-form">
-              <select>
-                <option value="level of knowledge" selected>Beginner</option>
-                <option value="level of knowledge">Intermediate</option>
-                <option value="level of knowledge">Professional</option>
-              </select>
+              <div class="select" onclick="makeActive()">
+                <input type="text" class="textBox" placeholder="level of knowledge" readonly>
+                <div class="option-level">
+                  <div onclick="show('Beginner')">Beginner</div>
+                  <div onclick="show('Intermediate')">Intermediate</div>
+                  <div onclick="show('Professional')">Professional</div>
+                </div>
+              </div>
             
-              <select>
-                <option value="Magnus Carlsen" data-description="./icons/Magnus Carlsen.png" selected>Magnus Carlsen</option>
-                <option value="Joan doe" >Joan doe</option>
-                <option value="Nona Gafrindashvili" >Nona Gafrindashvili</option>
-                <option value="Other" >Other</option>
-              </select>
+              <div class="select" onclick="makeActive()">
+                <input type="text" class="textBox" placeholder="Choose your character" readonly>
+                <div class="option-character">
+                  <p>(Total 4)</p>
+                  <div onclick="show('Magnus Carlsen')">Magnus Carlsen<img src="./icons/Magnus Carlsen.png" alt="Magnus"></div>
+                  <div onclick="show('Joan doe')">Joan doe<img src="./icons/Joan doe.png" alt="Magnus"></div>
+                  <div onclick="show('Nona Gafrindashvili')">Nona Gafrindashvili<img src="./icons/nona gaprindashvili.png" alt="Magnus"></div>
+                  <div onclick="show('Other')">Other<img src="./icons/Other.png" alt="Magnus"></div>
+                </div>
+              </div>
+              <!-- to here -->
             </div>
 
             <div>
@@ -78,7 +87,7 @@
             </div>
 
             <div class="button-group">
-              <button class="button" id="previous" onclick="history.go(-1)">
+              <button class="button" id="previous">
                 <span class="button-text">Back</span>
               </button>
               <button class="button" id="next">
