@@ -108,6 +108,7 @@
 .exp-form .select .option-level div:hover{
     background: #F7F7F9;
     color:#000000;
+    font-weight: 600;
 }
 
 .exp-form .select .option-character{
@@ -135,16 +136,24 @@
     margin-left: 20px;
 }
 .exp-form .select .option-character div{
-    padding: 32px 20px;
+    padding: 5px 20px;
     cursor: pointer;
     color: #212529;
+    align-items: center;
     font-family: 'Nunito','Open Sans',sans-serif;
     font-weight: 400;
     font-size: 20px;
 }
+/* Needs editing so drop down style is good*/
+.exp-form .select .option-character div img{
+    align-items: right;
+}
+/*********************/
+
 .exp-form .select .option-character div:hover{
     background: #F7F7F9;
     color:#000000;
+    font-weight: 600;
 }
 
 /* to here 

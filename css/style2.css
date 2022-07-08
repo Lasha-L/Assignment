@@ -190,7 +190,7 @@ body {
 
 /************************/
 
-.form-group input:invalid{
+.form-group input.invalid{
   background-color: #FFEFEF;
   color:#DC3545;
 }

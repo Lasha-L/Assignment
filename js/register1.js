@@ -9,6 +9,10 @@ closeError.onclick = function(){
     popupError.style.display = 'none'
 }
 
+function displayError(){
+    popupError.style.display = 'block'
+}
+
 function validateName(){
     var name_val = document.getElementById("name").value
 
@@ -16,9 +20,11 @@ function validateName(){
         document.getElementById("warning-header").innerHTML = "Invalid name"
         document.getElementById("warning-text").innerHTML = "Please enter valid name"
         displayError()
+        correctInput_1.style.display = 'none'
+        document.getElementById("name").classList.add('invalid');
         return false
     }
-    /* make green tick sign apear */
+    document.getElementById("name").classList.remove('invalid');
     popupError.style.display = 'none'
     correctInput_1.style.display = 'block'
     return true
@@ -31,9 +37,11 @@ function validateEmail(){
         document.getElementById("warning-header").innerHTML = "Invalid email"
         document.getElementById("warning-text").innerHTML = "Please enter valid email address"
         displayError()
+        correctInput_2.style.display = 'none'
+        document.getElementById("email").classList.add('invalid');
         return false
     }
-    /* make green tick sign apear */
+    document.getElementById("email").classList.remove('invalid');
     popupError.style.display = 'none'
     correctInput_2.style.display = 'block'
     return true
@@ -41,15 +49,17 @@ function validateEmail(){
 
 
 function validatePhone(){
-    var Phone_val = document.getElementById("email").value
+    var Phone_val = document.getElementById("phone").value
 
     if(Phone_val.length < 9){
         document.getElementById("warning-header").innerHTML = "Invalid phone number"
         document.getElementById("warning-text").innerHTML = "Please enter valid phone number"
         displayError()
+        correctInput_3.style.display = 'none'
+        document.getElementById("phone").classList.add('invalid');
         return false
     }
-    /* make green tick sign apear */
+    document.getElementById("phone").classList.remove('invalid');
     popupError.style.display = 'none'
     correctInput_3.style.display = 'block'
     return true
@@ -63,9 +73,11 @@ function validateDate(){
         document.getElementById("warning-header").innerHTML = "Invalid date of birth"
         document.getElementById("warning-text").innerHTML = "Please enter valid date of birth"
         displayError()
+        correctInput_4.style.display = 'none'
+        document.getElementById("date").classList.add('invalid');
         return false
     }
-    /* make green tick sign apear */
+    document.getElementById("date").classList.remove('invalid');
     popupError.style.display = 'none'
     correctInput_4.style.display = 'block'
     return true
@@ -80,9 +92,7 @@ function validateForm(){
     return true
 }
 
-function displayError(){
-    popupError.style.display = 'block'
-}
+
 
 
 document.getElementById("previous").onclick = function(){
