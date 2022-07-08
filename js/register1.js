@@ -16,7 +16,7 @@ function displayError(){
 function validateName(){
     var name_val = document.getElementById("name").value
 
-    if(name_val.length < 2 || !name_val.match(/^[A-Za-z]+$/)){
+    if(name_val.length < 2 || !name_val.match(/^([A-Za-z])([A-Za-z ])+$/)){
         document.getElementById("warning-header").innerHTML = "Invalid name"
         document.getElementById("warning-text").innerHTML = "Please enter valid name"
         displayError()
@@ -51,7 +51,7 @@ function validateEmail(){
 function validatePhone(){
     var Phone_val = document.getElementById("phone").value
 
-    if(Phone_val.length < 9){
+    if(Phone_val.length < 9 || !Phone_val.match(/^5\d{8}$/)){
         document.getElementById("warning-header").innerHTML = "Invalid phone number"
         document.getElementById("warning-text").innerHTML = "Please enter valid phone number"
         displayError()
@@ -69,7 +69,7 @@ function validatePhone(){
 function validateDate(){
     var date_val = document.getElementById("date").value
 
-    if(document.getElementById("date").valid){
+    if(!date_val.match(/^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]|(?:Jan|Mar|May|Jul|Aug|Oct|Dec)))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2]|(?:Jan|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec))\2))(?:(?:19[2-9]\d|200[0-6]))$|^(?:29(\/|-|\.)(?:0?2|(?:Feb))\3(?:(?:(?:19)(?:[2468][048]|[3579][26])|(?:(?:200)[04]))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9]|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep))|(?:1[0-2]|(?:Oct|Nov|Dec)))\4(?:(?:19[2-9]\d|200[0-6]))$/)){
         document.getElementById("warning-header").innerHTML = "Invalid date of birth"
         document.getElementById("warning-text").innerHTML = "Please enter valid date of birth"
         displayError()
@@ -85,42 +85,44 @@ function validateDate(){
 
 function validateForm(){
     if(!validateName()||!validateEmail()||!validatePhone()||!validateDate()){
-        document.getElementById("warning-header").innerHTML = "Invalid input"
-        document.getElementById("warning-text").innerHTML = "Please enter valid data"
+        if(!validateName()){
+            document.getElementById("name").classList.add('invalid');
+        }
+        if(!validateEmail()){
+            document.getElementById("email").classList.add('invalid');
+        }
+        if(!validatePhone()){
+            document.getElementById("phone").classList.add('invalid');
+        }
+        if(!validateDate()){
+            document.getElementById("date").classList.add('invalid');
+        }
         return false
     }
     return true
 }
 
+document.getElementById("next").onclick = function(){
+    if(validateForm()){
+        location.href = "register2.html"
+    }
+    else{
+        document.getElementById("warning-header").innerHTML = "Invalid input"
+        document.getElementById("warning-text").innerHTML = "Please enter valid data"
+        displayError();
+    }
+}
 
-
+function active(){
+    document.getElementById("square-1").classList.add('current')
+}
 
 document.getElementById("previous").onclick = function(){
     location.href = "index.html"
 }
 
-
-
-
-/*
-document.getElementById("next").onclick = function(){
-    e.preventDefault();
-    if(inputCheck()){
-        location.href = "register2.html"
-    }
-    else{
-        showError();
+function progressCheck(){
+    if(validateForm()){
+        document.getElementById("square-1").classList.add('finished')
     }
 }
-
-const name = document.getElementById("name")
-const email = document.getElementById("email")
-const phone = document.getElementById("phone")
-const date = document.getElementById("date")
-
-document.getElementById("next").onclick = function(){
-    location.href = "register2.html"
-}
-
-
-*/

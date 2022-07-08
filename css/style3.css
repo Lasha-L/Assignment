@@ -121,7 +121,7 @@
     border: 1px solid rgba(185, 180, 196, 0.3);
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
-    overflow: hidden;
+    z-index: 10;
     display: none;
 }
 .exp-form .select.active .option-character{
@@ -136,10 +136,10 @@
     margin-left: 20px;
 }
 .exp-form .select .option-character div{
-    padding: 5px 20px;
+    width: 344px;
+    height: 88px;
     cursor: pointer;
     color: #212529;
-    align-items: center;
     font-family: 'Nunito','Open Sans',sans-serif;
     font-weight: 400;
     font-size: 20px;
@@ -181,3 +181,14 @@
     font-size:16px;
 }
 
+.square.finished{
+    background-color: #E9FAF1;
+}
+
+.square.active.finished{
+    display: block;
+}
+
+label span{
+    color:#DC3545;
+}

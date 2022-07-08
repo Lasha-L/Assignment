@@ -37,9 +37,9 @@
         <div class="right-bottom">
           <div class="progress-bar-container">
             <div class="progress-container">
-              <div class="square active">1</div>
+              <div class="square finished"><p>1</p><img id="icon" src="./icons/Vector (1).png" alt="finished" /></div>
               <div class="progress" id="progress"></div>
-              <div class="square">2</div>
+              <div class="square active" id="square-2"><p>2</p><img id="icon" src="./icons/Vector (1).png" alt="finished" /></div>
             </div>
             <br />
   
@@ -56,8 +56,8 @@
           <form class="my-form">
             <!-- Drop down needs a fixing from here-->
             <div class="exp-form">
-              <div class="select dropdown-1" onclick="makeActive_1()">
-                <input type="text" class="textBox field-1" placeholder="level of knowledge" readonly>
+              <div class="select dropdown-1"  onclick="makeActive_1()">
+                <input id="level" type="text" class="textBox field-1" onfocus="active()" placeholder="level of knowledge" readonly required>
                 <div class="option-level">
                   <div onclick="show_1('Beginner')">Beginner</div>
                   <div onclick="show_1('Intermediate')">Intermediate</div>
@@ -65,8 +65,8 @@
                 </div>
               </div>
             
-              <div class="select dropdown-2" onclick="makeActive_2()">
-                <input type="text" class="textBox field-2" placeholder="Choose your character" readonly>
+              <div class="select dropdown-2"  onclick="makeActive_2()">
+                <input type="text" id="character" class="textBox field-2" placeholder="Choose your character" onfocus="active()" readonly required>
                 <div class="option-character">
                   <p>(Total 4)</p>
                   <div onclick="show_2('Magnus Carlsen')">Magnus Carlsen<img src="./icons/Magnus Carlsen.png" alt="Magnus"></div>
@@ -79,10 +79,10 @@
             </div>
 
             <div>
-              <label for="yes_no_radio">Have you participated in the Redberry Championship?</label>
+              <label for="yes_no_radio">Have you participated in the Redberry Championship? <span>*</span> </label>
               <p>
-                <input type="radio" name="yes-no" checked> Yes</input>
-                <input type="radio" name="yes-no"> No</input>
+                <input id="played" type="radio" name="yes-no" onfocus="active()" checked required> Yes</input>
+                <input type="radio" name="yes-no" onfocus="active()"> No</input>
               </p>
             </div>
 
@@ -101,5 +101,6 @@
         </div>
       </div>
     <script src="./js/register2.js"></script>
+    <script src="./js/signupStorage.js"></script>
   </body>
 </html>

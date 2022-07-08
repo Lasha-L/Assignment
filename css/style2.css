@@ -96,10 +96,19 @@ body {
 .square.active{
   background-color: #fff;
 }
-.square.active::after{
+.square.active.current{
   background-color: #E9FAF1;
 }
-
+#icon{
+  position: absolute;
+  display: none;
+}
+.square.finished p{
+  display: none;
+}
+.square.finished #icon{
+  display: block;
+}
 .quote {
   position:absolute;
   top: 356.4px;
@@ -308,8 +317,13 @@ body {
   font-size: 14px;
 }
 
-.error .header #close{
-  padding-left: 20px;
+.error .header #close-error{
+  margin-left: 19px;
+  padding: 13px;
+}
+
+.error .header #close-error:hover{
+  background-color: #E5E6E8;
 }
 
 #warning-text{

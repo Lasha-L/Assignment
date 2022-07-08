@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/style2.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="container register-1">
       <div class="left-top">
         <h3>
           <img src="./icons/Vector1.png" alt="logo" /> Redberry Knight Cup
@@ -34,9 +34,12 @@
       <div class="right-bottom">
         <div class="progress-bar-container">
           <div class="progress-container">
-            <div class="square active">1</div>
+            <div class="square active" id="square-1">
+              <p>1</p>
+              <img id="icon" src="./icons/Vector (1).png" alt="finished" />
+            </div>
             <div class="progress" id="progress"></div>
-            <div class="square">2</div>
+            <div class="square" id="square-2">2</div>
           </div>
           <br />
 
@@ -58,7 +61,8 @@
               id="name"
               placeholder="Name *"
               minlength="2"
-              onfocusout="validateName()"
+              onfocus="active()"
+              onfocusout="validateName(); progressCheck()"
               checked
             />
             <img id="correct-1" src="./icons/Vector.png" alt="correct" />
@@ -70,7 +74,7 @@
               class="input"
               id="email"
               placeholder="Email address *"
-              onfocusout="validateEmail()"
+              onfocusout="validateEmail(); progressCheck()"
               checked
             />
             <img id="correct-2" src="./icons/Vector.png" alt="correct" />
@@ -84,7 +88,7 @@
               placeholder="Phone number *"
               minlength="9"
               maxlength="9"
-              onfocusout="validatePhone()"
+              onfocusout="validatePhone(); progressCheck()"
               onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
               checked
             />
@@ -92,14 +96,11 @@
           </div>
           <div class="form-group">
             <input
-              type="date"
+              type="text"
               class="input"
               id="date"
               placeholder="Date of birth *"
-              value=""
-              min="01-01-1930"
-              max="31-12-2006"
-              onfocusout="validateDate()"
+              onfocusout="validateDate(); progressCheck()"
               checked
             />
             <img id="correct-4" src="./icons/Vector.png" alt="correct" />
@@ -132,6 +133,7 @@
         </div>
       </div>
     </div>
-    <script src="js/register1.js"></script>
+    <script src="./js/register1.js"></script>
+    <script src="./js/signupStorage.js"></script>
   </body>
 </html>
