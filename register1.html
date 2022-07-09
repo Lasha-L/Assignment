@@ -62,7 +62,7 @@
               placeholder="Name *"
               minlength="2"
               onfocus="active()"
-              onfocusout="validateName();progressCheck()"
+              onfocusout="validateName()"
               checked
             />
             <img id="correct-1" src="./icons/Vector.png" alt="correct" />
@@ -75,7 +75,7 @@
               id="email"
               placeholder="Email address *"
               onfocus="active()"
-              onfocusout="validateEmail();progressCheck()"
+              onfocusout="validateEmail()"
               checked
             />
             <img id="correct-2" src="./icons/Vector.png" alt="correct" />
@@ -90,7 +90,7 @@
               minlength="9"
               maxlength="9"
               onfocus="active()"
-              onfocusout="validatePhone();progressCheck()"
+              onfocusout="validatePhone()"
               onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
               checked
             />
@@ -103,7 +103,7 @@
               id="date"
               onfocus="active()"
               placeholder="Date of birth *"
-              onfocusout="validateDate();progressCheck()"
+              onfocusout="validateDate()"
               checked
             />
             <img id="correct-4" src="./icons/Vector.png" alt="correct" />
@@ -124,7 +124,7 @@
         <div class="error" id="error">
           <div class="header">
             <img src="./icons/Vector!.png" alt="warning" />
-            <div id="warning-header">Invalid email</div>
+            <div id="warning-header">Invalid data</div>
             <img
               id="close-error"
               src="./icons/Vector (2).png"
@@ -132,7 +132,7 @@
               id="close"
             />
           </div>
-          <p id="warning-text">Please enter valid email address</p>
+          <p id="warning-text">Please enter valid data</p>
         </div>
       </div>
     </div>

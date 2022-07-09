@@ -12,6 +12,10 @@ closeError.onclick = function(){
 function displayError(){
     popupError.style.display = 'block'
 }
+let field_1 = false;
+let field_2 = false;
+let field_3 = false;
+let field_4 = false;
 
 function validateName(){
     var name_val = document.getElementById("name").value
@@ -19,15 +23,18 @@ function validateName(){
     if(name_val.length < 2 || !name_val.match(/^([A-Za-z])([A-Za-z ])+$/)){
         document.getElementById("warning-header").innerHTML = "Invalid name"
         document.getElementById("warning-text").innerHTML = "Please enter valid name"
-        displayError()
+        displayError();
         correctInput_1.style.display = 'none'
         document.getElementById("name").classList.add('invalid');
         document.getElementById("square-1").classList.remove('finished')
+        field_1 = false;
         return false
     }
     document.getElementById("name").classList.remove('invalid');
     popupError.style.display = 'none'
     correctInput_1.style.display = 'block'
+    field_1 = true;
+    progressCheck();
     return true
 }
 
@@ -41,14 +48,16 @@ function validateEmail(){
         correctInput_2.style.display = 'none'
         document.getElementById("email").classList.add('invalid');
         document.getElementById("square-1").classList.remove('finished')
+        field_2 = false;
         return false
     }
     document.getElementById("email").classList.remove('invalid');
     popupError.style.display = 'none'
     correctInput_2.style.display = 'block'
+    field_2 = true;
+    progressCheck();
     return true
 }
-
 
 function validatePhone(){
     var Phone_val = document.getElementById("phone").value
@@ -60,15 +69,17 @@ function validatePhone(){
         correctInput_3.style.display = 'none'
         document.getElementById("phone").classList.add('invalid');
         document.getElementById("square-1").classList.remove('finished')
+        field_3 = false;
         return false
     }
     document.getElementById("phone").classList.remove('invalid');
     popupError.style.display = 'none'
     correctInput_3.style.display = 'block'
+    field_3 = true;
+    progressCheck();
     return true
 }
 
-/* date input needs fixing */
 function validateDate(){
     var date_val = document.getElementById("date").value
 
@@ -79,31 +90,34 @@ function validateDate(){
         correctInput_4.style.display = 'none'
         document.getElementById("date").classList.add('invalid');
         document.getElementById("square-1").classList.remove('finished')
+        field_4 = false;
         return false
     }
     document.getElementById("date").classList.remove('invalid');
     popupError.style.display = 'none'
     correctInput_4.style.display = 'block'
+    field_4 = true;
+    progressCheck();
     return true
 }
 
 function validateForm(){
-    if(!validateName()||!validateEmail()||!validatePhone()||!validateDate()){
-        if(!validateName()){
+    if(!validateName()||!validateEmail()||!validatePhone()||!validateDate){
+        if(!field_1){
             document.getElementById("name").classList.add('invalid');
         }
-        if(!validateEmail()){
+        if(!field_2){
             document.getElementById("email").classList.add('invalid');
         }
-        if(!validatePhone()){
+        if(!field_3){
             document.getElementById("phone").classList.add('invalid');
         }
-        if(!validateDate()){
+        if(!field_4){
             document.getElementById("date").classList.add('invalid');
         }
-        return false
+        return false;
     }
-    return true
+    return true;
 }
 
 document.getElementById("next").onclick = function(){
@@ -126,7 +140,59 @@ document.getElementById("previous").onclick = function(){
 }
 
 function progressCheck(){
-    if(validateForm()){
+    if(field_1 && field_2 && field_3 && field_4){
         document.getElementById("square-1").classList.add('finished')
     }
 }
+
+window.onbeforeunload = function() {
+    if(field_1){
+        localStorage.setItem("name", document.getElementById("name").value);
+        localStorage.setItem("correct-1", document.getElementById("correct-1"));
+    }
+    if(field_2){
+        localStorage.setItem("email", document.getElementById("email").value);
+        localStorage.setItem("correct-2", document.getElementById("correct-2"));
+    }
+    if(field_3){
+        localStorage.setItem("phone", document.getElementById("phone").value);
+        localStorage.setItem("correct-3", document.getElementById("correct-3"));
+    }
+    if(field_4){
+        localStorage.setItem("date", document.getElementById("date").value);
+        localStorage.setItem("correct-4", document.getElementById("correct-4"));
+    }
+    if(field_1 && field_2 && field_3 && field_4){
+        localStorage.setItem("icon", document.getElementById("square-1"));
+    }
+}
+
+window.onload = function() {
+    var name = localStorage.getItem("name");
+    var email = localStorage.getItem("email");
+    var phone = localStorage.getItem("phone");
+    var date = localStorage.getItem("date");
+
+    var correct_1 = localStorage.getItem("correct-1");
+    var correct_2 = localStorage.getItem("correct-2");
+    var correct_3 = localStorage.getItem("correct-3");
+    var correct_4 = localStorage.getItem("correct-4");
+
+    var finished_all = localStorage.getItem("icon");
+
+    if (name !== null) document.getElementById("name").value = name; 
+    if (email !== null) document.getElementById("email").value = email;
+    if (phone !== null) document.getElementById("phone").value = phone; 
+    if (date !== null) document.getElementById("date").value = date;
+
+    if (correct_1 !== null) document.getElementById("correct-1").style.display = 'block';
+    if (correct_2 !== null) document.getElementById("correct-2").style.display = 'block';
+    if (correct_3 !== null) document.getElementById("correct-3").style.display = 'block';
+    if (correct_4 !== null) document.getElementById("correct-4").style.display = 'block';
+
+    if(finished_all != null){
+        document.getElementById("square-1").classList.add('finished');
+        document.getElementById("square-1").classList.add('current')
+    } 
+}
+

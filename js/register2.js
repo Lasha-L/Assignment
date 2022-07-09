@@ -1,8 +1,3 @@
-const chooseLevel = document.querySelectorAll('.level-choice > li');
-const chooseChar = document.querySelectorAll('.text > li');
-//const played_before = document.querySelectorAll('.yes-no > li');
-
-
 document.getElementById("previous").onclick = function(){
     location.href = "register1.html"
 }
@@ -10,6 +5,7 @@ document.getElementById("previous").onclick = function(){
 let isSelected_1 = false;
 let isSelected_2 = false;
 
+let flag_for_submit = false;
 
 function show_1(anything){
     document.querySelector('.field-1').value = anything;
@@ -28,23 +24,35 @@ function show_2(anything){
 function makeActive_1() {
    var element = document.querySelector('.dropdown-1');
    element.classList.toggle('active');
+   popupError.style.display = 'none';
 }
 
 function makeActive_2() {
     var element = document.querySelector('.dropdown-2');
     element.classList.toggle('active');
+    popupError.style.display = 'none';
  }
  
 function validInput(){
     if(isSelected_1&&isSelected_2){
-        document.getElementById("submit").innerHTML = "Done"
-        document.getElementById("next-icon").style.display = 'none'
+        document.getElementById("submit").innerHTML = "Done";
+        document.getElementById("next-icon").style.display = 'none';
+        flag_for_submit = true;
     }
 }
 
-if(isSelected_1&&isSelected_2){
-    document.getElementById("next").onclick = function(){
-        location.href = "final.html"
+const popupError = document.getElementById("error");
+const closeError = document.getElementById("close-error");
+closeError.onclick = function(){
+    popupError.style.display = 'none';
+}
+
+function done(){
+    if(isSelected_1&&isSelected_2){
+        location.href = "final.html";
+        localStorage.clear();
+    }else{
+        popupError.style.display = 'block';
     }
 }
 
@@ -59,20 +67,67 @@ document.getElementById('screen').onclick = function(e) {
     }
 }
 
+function active(){
+    document.getElementById("square-2").classList.add('current')
+}
+
+
+function check_1(){
+    document.getElementById("played").checked = true;
+}
+
+function check_2(){
+    document.getElementById("not-played").checked = true;
+}
+
+
+window.onbeforeunload = function() {
+    if(isSelected_1){
+        localStorage.setItem("level", document.getElementById("level").value);
+    }
+    if(isSelected_2){
+        localStorage.setItem("character", document.getElementById("character").value);
+    }
+    if(document.getElementById("played").checked == true){
+        localStorage.setItem("played", document.getElementById("played").value);
+    }
+    else{
+        localStorage.setItem("played",document.getElementById("not-played").value);
+    }
+    if(document.getElementById("level").value != null && document.getElementById("character").value != null){
+        localStorage.setItem("finish_button",flag_for_submit);
+    }
+}
+
+window.onload = function() {
+    
+    var level_var = localStorage.getItem("level");
+    var character_var = localStorage.getItem("character");
+    var played_var = localStorage.getItem("played");
+    var finish_button = localStorage.getItem("finish_button");
+    
+    if (level_var !== null) document.getElementById("level").value = level_var; 
+    if (character_var !== null) document.getElementById("character").value = character_var;
+    if(played_var == "yes"){
+      document.getElementById("played").checked = true;
+    }
+    else{
+        document.getElementById("not-played").checked = true;
+    }
+    if(finish_button){
+        document.getElementById("submit").innerHTML = "Done";
+        document.getElementById("next-icon").style.display = 'none';
+        isSelected_1 = true;
+        isSelected_2 = true;
+    }
+    console.log(document.getElementById("level").value==null);
+    console.log(document.getElementById("character").value);
+}
+
 
 
 /*
-function validLevel(){
-    var level;
-    for (let option in chooseLevel) {
-        if (option.textContent == chooseLevel.textContent) {
-            isSelected_1 = true;
-            level = option.textContent;
-            document.getElementById("level").value = level;
-            break;
-        }
-    }
-}
+
 const level_choice1=document.getElementById("l-1");
 const level_choice2=document.getElementById("l-2");
 const level_choice3=document.getElementById("l-3");
@@ -85,42 +140,16 @@ document.getElementById("level").setAttribute('value',method1);
 
 console.log(document.getElementById("level").value);
 
-function validCharacter(){
-    var character;
-    let isSelected_2 = false;
-    for (let option in chooseLevel) {
-        if (option.textContent == chooseLevel.textContent) {
-            isSelected_2 = true;
-            character = option.textContent;
-            JSON.stringify(character);
-            document.getElementById("character").value = character;
-            break;
+if(isSelected_1&&isSelected_2){
+        document.getElementById("next").onclick = function(){
+            
         }
     }
-}
 
 
-*/
-/*Code that makes submit button become done
 
- */
-/* this works if you click your mouse off  but needs fixing
+this works if you click your mouse off  but needs fixing
 formContainer.classList.Add(active);
 localstorage.setItem(formcontainer, active)
-formContainer.classlist.add(localStorage.getItem(formContainer)
-
-function makeInActive_1() {
-    var element = document.querySelector('.option-level');
-    element.classList.remove('active');
- }
- 
- function makeInActive_2() {
-     var element = document.querySelector('.option-character');
-     element.classList.remove('active');
-  }
-
- 
+formContainer.classlist.add(localStorage.getItem(formContainer) 
 */
-function active(){
-    document.getElementById("square-2").classList.add('current')
-}

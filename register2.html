@@ -57,7 +57,6 @@
         </div>
 
         <form class="my-form">
-          <!-- Drop down needs a fixing from here-->
           <div class="exp-form">
             <div class="select dropdown-1" onclick="makeActive_1()">
               <input
@@ -65,10 +64,10 @@
                 type="text"
                 class="textBox field-1"
                 onfocus="active()"
-                placeholder="level of knowledge"
+                placeholder="level of knowledge *"
                 readonly
                 checked
-              /><!--onfocusout="makeInActive_1()"-->
+              />
               <div class="option-level">
                 <div
                   class="level-choice"
@@ -102,32 +101,39 @@
                 type="text"
                 id="character"
                 class="textBox field-2"
-                placeholder="Choose your character"
+                placeholder="Choose your character *"
                 onfocus="active()"
                 readonly
                 checked
-              /><!--onfocusout="makeInActive_2()"-->
+              />
               <div class="option-character">
                 <p>(Total 4)</p>
-                <div onclick="show_2('Magnus Carlsen')">
-                  <span class="text" id="c-1">Magnus Carlsen</span
+                <div
+                  value="Magnus Carlsen"
+                  id="c-1"
+                  onclick="show_2('Magnus Carlsen')"
+                >
+                  <span class="text">Magnus Carlsen</span
                   ><img src="./icons/Magnus Carlsen.png" alt="Magnus" />
                 </div>
-                <div onclick="show_2('Joan doe')">
-                  <span class="text" id="c-2">Joan doe</span
+                <div value="Joan doe" id="c-2" onclick="show_2('Joan doe')">
+                  <span class="text">Joan doe</span
                   ><img src="./icons/Joan doe.png" alt="Joan" />
                 </div>
-                <div onclick="show_2('Nona Gafrindashvili')">
-                  <span class="text" id="c-3">Nona Gafrindashvili</span
+                <div
+                  value="Nona Gafrindashvili"
+                  id="c-3"
+                  onclick="show_2('Nona Gafrindashvili')"
+                >
+                  <span class="text">Nona Gafrindashvili</span
                   ><img src="./icons/nona gaprindashvili.png" alt="nona" />
                 </div>
-                <div onclick="show_2('Other')">
-                  <span class="text" id="c-4">Other</span
+                <div value="Other" id="c-4" onclick="show_2('Other')">
+                  <span class="text">Other</span
                   ><img src="./icons/Other.png" alt="Other" />
                 </div>
               </div>
             </div>
-            <!-- to here -->
           </div>
 
           <div>
@@ -141,15 +147,19 @@
                 type="radio"
                 class="yes-no"
                 name="yes-no"
+                value="yes"
+                onclick="check_1()"
                 onfocus="active()"
-                checked
                 required
               />
               Yes
               <input
+                id="not-played"
                 type="radio"
                 class="yes-no"
                 name="yes-no"
+                value="no"
+                onclick="check_2()"
                 onfocus="active()"
               />
               No
@@ -157,10 +167,10 @@
           </div>
 
           <div class="button-group">
-            <button class="button" id="previous">
+            <button type="button" class="button" id="previous">
               <span class="button-text">Back</span>
             </button>
-            <button class="button" id="next">
+            <button type="button" class="button" id="next" onclick="done()">
               <span class="button-text" id="submit">Next</span>
               <span class="button-icon">
                 <img id="next-icon" src="./icons/Vector2.png" alt="click" />
@@ -168,6 +178,19 @@
             </button>
           </div>
         </form>
+        <div class="error" id="error">
+          <div class="header">
+            <img src="./icons/Vector!.png" alt="warning" />
+            <div id="warning-header">Invalid data</div>
+            <img
+              id="close-error"
+              src="./icons/Vector (2).png"
+              alt="close"
+              id="close"
+            />
+          </div>
+          <p id="warning-text">Please enter valid data</p>
+        </div>
       </div>
     </div>
     <script src="./js/register2.js"></script>
