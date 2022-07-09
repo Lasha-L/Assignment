@@ -4,102 +4,172 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Onboarding - Redberry Knight Cup</title>
     <link rel="stylesheet" href="./css/style2.css" />
     <link rel="stylesheet" href="./css/style3.css" />
   </head>
   <body>
-    <div class="container">
-        <div class="left-top">
-          <h3>
-            <img src="./icons/Vector1.png" alt="logo" /> Redberry Knight Cup
-          </h3>
-        </div>
+    <div class="container" id="screen">
+      <div class="left-top">
+        <h3>
+          <img src="./icons/Vector1.png" alt="logo" /> Redberry Knight Cup
+        </h3>
+      </div>
 
-        <div class="right-top">
-                  <p>First Step Is Done, Continue To Finish On Boarding</p>
-        </div>
-        
-        <div class="left-bottom">
-          <img src="./images/unsplash_27LH_0jXKYI (1).png" alt="unsplash" />
-          <div class="quote">
-            <h6>
-              "MANY HAVE BECOME CHESS MASTERS;<br />NO ONE HAS BECOME THE MASTER
-              OF CHESS."
-            </h6>
-            <br />
-            <p>-SIEGBERT TARRASCH</p>
-          </div>
-        </div>
+      <div class="right-top">
+        <p>First Step Is Done, Continue To Finish On Boarding</p>
+      </div>
 
-        
-
-        <div class="right-bottom">
-          <div class="progress-bar-container">
-            <div class="progress-container">
-              <div class="square finished"><p>1</p><img id="icon" src="./icons/Vector (1).png" alt="finished" /></div>
-              <div class="progress" id="progress"></div>
-              <div class="square active" id="square-2"><p>2</p><img id="icon" src="./icons/Vector (1).png" alt="finished" /></div>
-            </div>
-            <br />
-  
-            <div class="progress-text">
-              <span id="info-header-1">Personal information</span>
-              <span id="info-header-2">Chess experience</span>
-            </div>
-          </div>
-          <div class="header">
-            <h1>Chess experience</h1>
-            <p>This is Basic information Fields</p>
-          </div>
-          
-          <form class="my-form">
-            <!-- Drop down needs a fixing from here-->
-            <div class="exp-form">
-              <div class="select dropdown-1"  onclick="makeActive_1()">
-                <input id="level" type="text" class="textBox field-1" onfocus="active()" placeholder="level of knowledge" readonly required>
-                <div class="option-level">
-                  <div onclick="show_1('Beginner')">Beginner</div>
-                  <div onclick="show_1('Intermediate')">Intermediate</div>
-                  <div onclick="show_1('Professional')">Professional</div>
-                </div>
-              </div>
-            
-              <div class="select dropdown-2"  onclick="makeActive_2()">
-                <input type="text" id="character" class="textBox field-2" placeholder="Choose your character" onfocus="active()" readonly required>
-                <div class="option-character">
-                  <p>(Total 4)</p>
-                  <div onclick="show_2('Magnus Carlsen')">Magnus Carlsen<img src="./icons/Magnus Carlsen.png" alt="Magnus"></div>
-                  <div onclick="show_2('Joan doe')">Joan doe<img src="./icons/Joan doe.png" alt="Magnus"></div>
-                  <div onclick="show_2('Nona Gafrindashvili')">Nona Gafrindashvili<img src="./icons/nona gaprindashvili.png" alt="Magnus"></div>
-                  <div onclick="show_2('Other')">Other<img src="./icons/Other.png" alt="Magnus"></div>
-                </div>
-              </div>
-              <!-- to here -->
-            </div>
-
-            <div>
-              <label for="yes_no_radio">Have you participated in the Redberry Championship? <span>*</span> </label>
-              <p>
-                <input id="played" type="radio" name="yes-no" onfocus="active()" checked required> Yes</input>
-                <input type="radio" name="yes-no" onfocus="active()"> No</input>
-              </p>
-            </div>
-
-            <div class="button-group">
-              <button class="button" id="previous">
-                <span class="button-text">Back</span>
-              </button>
-              <button class="button" id="next">
-                <span class="button-text">Next</span>
-                <span class="button-icon">
-                  <img src="./icons/Vector2.png" alt="click" />
-                </span>
-              </button>
-            </div>
-          </form>
+      <div class="left-bottom">
+        <img src="./images/unsplash_27LH_0jXKYI (1).png" alt="unsplash" />
+        <div class="quote">
+          <h6>
+            "MANY HAVE BECOME CHESS MASTERS;<br />NO ONE HAS BECOME THE MASTER
+            OF CHESS."
+          </h6>
+          <br />
+          <p>-SIEGBERT TARRASCH</p>
         </div>
       </div>
+
+      <div class="right-bottom">
+        <div class="progress-bar-container">
+          <div class="progress-container">
+            <div class="square finished">
+              <p>1</p>
+              <img id="icon" src="./icons/Vector (1).png" alt="finished" />
+            </div>
+            <div class="progress" id="progress"></div>
+            <div class="square active" id="square-2">
+              <p>2</p>
+            </div>
+          </div>
+          <br />
+
+          <div class="progress-text">
+            <span id="info-header-1">Personal information</span>
+            <span id="info-header-2">Chess experience</span>
+          </div>
+        </div>
+        <div class="header">
+          <h1>Chess experience</h1>
+          <p>This is Basic information Fields</p>
+        </div>
+
+        <form class="my-form">
+          <!-- Drop down needs a fixing from here-->
+          <div class="exp-form">
+            <div class="select dropdown-1" onclick="makeActive_1()">
+              <input
+                id="level"
+                type="text"
+                class="textBox field-1"
+                onfocus="active()"
+                placeholder="level of knowledge"
+                readonly
+                checked
+              /><!--onfocusout="makeInActive_1()"-->
+              <div class="option-level">
+                <div
+                  class="level-choice"
+                  value="Beginner"
+                  id="l-1"
+                  onclick="show_1('Beginner')"
+                >
+                  Beginner
+                </div>
+                <div
+                  class="level-choice"
+                  value="Intermediate"
+                  id="l-2"
+                  onclick="show_1('Intermediate')"
+                >
+                  Intermediate
+                </div>
+                <div
+                  class="level-choice"
+                  value="Professional"
+                  id="l-3"
+                  onclick="show_1('Professional')"
+                >
+                  Professional
+                </div>
+              </div>
+            </div>
+
+            <div class="select dropdown-2" onclick="makeActive_2()">
+              <input
+                type="text"
+                id="character"
+                class="textBox field-2"
+                placeholder="Choose your character"
+                onfocus="active()"
+                readonly
+                checked
+              /><!--onfocusout="makeInActive_2()"-->
+              <div class="option-character">
+                <p>(Total 4)</p>
+                <div onclick="show_2('Magnus Carlsen')">
+                  <span class="text" id="c-1">Magnus Carlsen</span
+                  ><img src="./icons/Magnus Carlsen.png" alt="Magnus" />
+                </div>
+                <div onclick="show_2('Joan doe')">
+                  <span class="text" id="c-2">Joan doe</span
+                  ><img src="./icons/Joan doe.png" alt="Joan" />
+                </div>
+                <div onclick="show_2('Nona Gafrindashvili')">
+                  <span class="text" id="c-3">Nona Gafrindashvili</span
+                  ><img src="./icons/nona gaprindashvili.png" alt="nona" />
+                </div>
+                <div onclick="show_2('Other')">
+                  <span class="text" id="c-4">Other</span
+                  ><img src="./icons/Other.png" alt="Other" />
+                </div>
+              </div>
+            </div>
+            <!-- to here -->
+          </div>
+
+          <div>
+            <label for="yes_no_radio"
+              >Have you participated in the Redberry Championship?
+              <span>*</span>
+            </label>
+            <p>
+              <input
+                id="played"
+                type="radio"
+                class="yes-no"
+                name="yes-no"
+                onfocus="active()"
+                checked
+                required
+              />
+              Yes
+              <input
+                type="radio"
+                class="yes-no"
+                name="yes-no"
+                onfocus="active()"
+              />
+              No
+            </p>
+          </div>
+
+          <div class="button-group">
+            <button class="button" id="previous">
+              <span class="button-text">Back</span>
+            </button>
+            <button class="button" id="next">
+              <span class="button-text" id="submit">Next</span>
+              <span class="button-icon">
+                <img id="next-icon" src="./icons/Vector2.png" alt="click" />
+              </span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
     <script src="./js/register2.js"></script>
     <script src="./js/signupStorage.js"></script>
   </body>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Onboarding - Redberry Knight Cup</title>
     <link rel="stylesheet" href="./css/style2.css" />
   </head>
   <body>
@@ -62,7 +62,7 @@
               placeholder="Name *"
               minlength="2"
               onfocus="active()"
-              onfocusout="validateName(); progressCheck()"
+              onfocusout="validateName();progressCheck()"
               checked
             />
             <img id="correct-1" src="./icons/Vector.png" alt="correct" />
@@ -74,7 +74,8 @@
               class="input"
               id="email"
               placeholder="Email address *"
-              onfocusout="validateEmail(); progressCheck()"
+              onfocus="active()"
+              onfocusout="validateEmail();progressCheck()"
               checked
             />
             <img id="correct-2" src="./icons/Vector.png" alt="correct" />
@@ -88,7 +89,8 @@
               placeholder="Phone number *"
               minlength="9"
               maxlength="9"
-              onfocusout="validatePhone(); progressCheck()"
+              onfocus="active()"
+              onfocusout="validatePhone();progressCheck()"
               onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
               checked
             />
@@ -99,8 +101,9 @@
               type="text"
               class="input"
               id="date"
+              onfocus="active()"
               placeholder="Date of birth *"
-              onfocusout="validateDate(); progressCheck()"
+              onfocusout="validateDate();progressCheck()"
               checked
             />
             <img id="correct-4" src="./icons/Vector.png" alt="correct" />

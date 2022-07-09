@@ -22,6 +22,7 @@ function validateName(){
         displayError()
         correctInput_1.style.display = 'none'
         document.getElementById("name").classList.add('invalid');
+        document.getElementById("square-1").classList.remove('finished')
         return false
     }
     document.getElementById("name").classList.remove('invalid');
@@ -39,6 +40,7 @@ function validateEmail(){
         displayError()
         correctInput_2.style.display = 'none'
         document.getElementById("email").classList.add('invalid');
+        document.getElementById("square-1").classList.remove('finished')
         return false
     }
     document.getElementById("email").classList.remove('invalid');
@@ -57,6 +59,7 @@ function validatePhone(){
         displayError()
         correctInput_3.style.display = 'none'
         document.getElementById("phone").classList.add('invalid');
+        document.getElementById("square-1").classList.remove('finished')
         return false
     }
     document.getElementById("phone").classList.remove('invalid');
@@ -75,6 +78,7 @@ function validateDate(){
         displayError()
         correctInput_4.style.display = 'none'
         document.getElementById("date").classList.add('invalid');
+        document.getElementById("square-1").classList.remove('finished')
         return false
     }
     document.getElementById("date").classList.remove('invalid');

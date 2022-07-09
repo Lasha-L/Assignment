@@ -63,7 +63,7 @@
     top: 22px;
     transform: rotate(-225deg);
 }
-
+/*****************************************/
 .exp-form .select input{
     width: 100%;
     height: 100%;
@@ -143,10 +143,22 @@
     font-family: 'Nunito','Open Sans',sans-serif;
     font-weight: 400;
     font-size: 20px;
+    margin: 0;
+    padding: 0;
+    padding-left: 20px;
 }
+
 /* Needs editing so drop down style is good*/
+.exp-form .select .option-character div .text{
+    position: relative;
+    top: 35%;
+    transform: translateY(-50%);
+}
 .exp-form .select .option-character div img{
-    align-items: right;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    float:right;
 }
 /*********************/
 
