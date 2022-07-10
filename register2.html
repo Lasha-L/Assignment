@@ -59,15 +59,23 @@
         <form class="my-form">
           <div class="exp-form">
             <div class="select dropdown-1" onclick="makeActive_1()">
-              <input
-                id="level"
-                type="text"
-                class="textBox field-1"
-                onfocus="active()"
-                placeholder="level of knowledge *"
-                readonly
-                checked
-              />
+              <div class="dropdown-select">
+                <input
+                  id="level"
+                  type="text"
+                  class="textBox field-1"
+                  onfocus="active()"
+                  placeholder="level of knowledge *"
+                  readonly
+                  checked
+                />
+                <img
+                  id="drop-icon-1"
+                  src="./icons/Vector_list_down.png"
+                  alt="choose"
+                />
+              </div>
+
               <div class="option-level">
                 <div
                   class="level-choice"
@@ -97,15 +105,22 @@
             </div>
 
             <div class="select dropdown-2" onclick="makeActive_2()">
-              <input
-                type="text"
-                id="character"
-                class="textBox field-2"
-                placeholder="Choose your character *"
-                onfocus="active()"
-                readonly
-                checked
-              />
+              <div class="dropdown-select">
+                <input
+                  type="text"
+                  id="character"
+                  class="textBox field-2"
+                  placeholder="Choose your character *"
+                  onfocus="active()"
+                  readonly
+                  checked
+                />
+                <img
+                  id="drop-icon-2"
+                  src="./icons/Vector_list_down.png"
+                  alt="choose"
+                />
+              </div>
               <div class="option-character">
                 <p>(Total 4)</p>
                 <div

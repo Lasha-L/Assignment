@@ -209,3 +209,12 @@ label span{
     color:#DC3545;
 }
 
+.dropdown-select{
+    display: flex;
+}
+
+.dropdown-select img{
+    position: absolute;
+    margin-left: 358px;
+    margin-top: 19.5px;
+}

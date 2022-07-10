@@ -36,11 +36,15 @@ let isSelected_2 = false;
 
 let flag_for_submit = false;
 
+var dropdown_icon1 = document.getElementById("drop-icon-1");
+var dropdown_icon2 = document.getElementById("drop-icon-2");
+
 function show_1(anything){
     document.querySelector('.field-1').value = anything;
     document.getElementById("level").setAttribute('value',anything);
     localStorage.setItem("level", document.getElementById("level").value);
     isSelected_1 = true;
+    dropdown_icon1.src = "./icons/Vector_list_down.png";
     validInput();
 }
 
@@ -49,7 +53,15 @@ function show_2(anything){
     document.getElementById("character").setAttribute('value',anything);
     localStorage.setItem("character", document.getElementById("character").value);
     isSelected_2 = true;
+    dropdown_icon2.src = "./icons/Vector_list_down.png";
     validInput();
+}
+document.getElementById("level").onclick = function(){
+    dropdown_icon1.src = "./icons/Vector_list_up.png";
+}
+
+document.getElementById("character").onclick = function(){
+    dropdown_icon2.src = "./icons/Vector_list_up.png";
 }
 
 function makeActive_1() {
@@ -116,6 +128,7 @@ function done(){
         .catch((error) => {
         console.error('Error:', error);
         });
+        document.getElementById("played").checked = true;
     }else{
         popupError.style.display = 'block';
     }
@@ -125,15 +138,17 @@ document.getElementById('screen').onclick = function(e) {
     if(e.target != document.querySelector('.option-level')&&e.target != document.getElementById("level")) {
         var element = document.querySelector('.dropdown-1');
         element.classList.remove('active');
+        dropdown_icon1.src = "./icons/Vector_list_down.png";
     }
     if(e.target != document.querySelector('.option-character')&&e.target != document.getElementById("character")) {
         var element = document.querySelector('.dropdown-2');
         element.classList.remove('active');
+        dropdown_icon2.src = "./icons/Vector_list_down.png";
     }
 }
 
 function active(){
-    document.getElementById("square-2").classList.add('current')
+    document.getElementById("square-2").classList.add('current');
 }
 
 
@@ -172,8 +187,16 @@ window.onload = function() {
         document.getElementById("submit").innerHTML = "Done";
         document.getElementById("next-icon").style.display = 'none';
     }
-    isSelected_1 = selected_1;
-    isSelected_2 = selected_2;
+    if(selected_1 === "true"){
+        isSelected_1 = true;
+    }else{
+        isSelected_1 = false;
+    }
+    if(selected_2 === "true"){
+        isSelected_2 = true;
+    }else{
+        isSelected_2 = false;
+    }
 }
 
 
