@@ -94,7 +94,7 @@ closeError.onclick = function(){
 
 function done(){
     if(isSelected_1&&isSelected_2){
-        //location.href = "final.html";
+        location.href = "final.html";
         var id;
         if(localStorage.getItem("character") == document.getElementById("1").getAttribute('value')){
             id = 1;
@@ -140,7 +140,6 @@ function done(){
         document.getElementById("played").checked = true;
     }else{
         popupError.style.display = 'block';
-        
     }
 }
 
@@ -206,35 +205,7 @@ window.onload = function() {
         isSelected_2 = true;
     }else{
         isSelected_2 = false;
-    }    
+    }
 }
 
 
-
-/*
-
-const level_choice1=document.getElementById("l-1");
-const level_choice2=document.getElementById("l-2");
-const level_choice3=document.getElementById("l-3");
-
-let method1 = level_choice1.getAttribute('value');
-let method2 = level_choice2.getAttribute('value');
-let method3 = level_choice3.getAttribute('value');
-
-document.getElementById("level").setAttribute('value',method1);
-
-console.log(document.getElementById("level").value);
-
-if(isSelected_1&&isSelected_2){
-        document.getElementById("next").onclick = function(){
-            
-        }
-    }
-
-
-
-this works if you click your mouse off  but needs fixing
-formContainer.classList.Add(active);
-localstorage.setItem(formcontainer, active)
-formContainer.classlist.add(localStorage.getItem(formContainer) 
-*/
