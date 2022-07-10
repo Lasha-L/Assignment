@@ -155,6 +155,10 @@
     transform: translateY(-50%);
 }
 .exp-form .select .option-character div img{
+    width: 100px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 8px;
     position: relative;
     top: 50%;
     transform: translateY(-50%);

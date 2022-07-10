@@ -71,25 +71,25 @@
               <div class="option-level">
                 <div
                   class="level-choice"
-                  value="Beginner"
+                  value="beginner"
                   id="l-1"
-                  onclick="show_1('Beginner')"
+                  onclick="show_1('beginner')"
                 >
                   Beginner
                 </div>
                 <div
                   class="level-choice"
-                  value="Intermediate"
+                  value="normal"
                   id="l-2"
-                  onclick="show_1('Intermediate')"
+                  onclick="show_1('normal')"
                 >
-                  Intermediate
+                  Normal
                 </div>
                 <div
                   class="level-choice"
-                  value="Professional"
+                  value="professional"
                   id="l-3"
-                  onclick="show_1('Professional')"
+                  onclick="show_1('professional')"
                 >
                   Professional
                 </div>
@@ -110,25 +110,37 @@
                 <p>(Total 4)</p>
                 <div
                   value="Magnus Carlsen"
+                  class="grandmaster"
                   id="c-1"
                   onclick="show_2('Magnus Carlsen')"
                 >
                   <span class="text">Magnus Carlsen</span
                   ><img src="./icons/Magnus Carlsen.png" alt="Magnus" />
                 </div>
-                <div value="Joan doe" id="c-2" onclick="show_2('Joan doe')">
+                <div
+                  value="Joan doe"
+                  class="grandmaster"
+                  id="c-2"
+                  onclick="show_2('Joan doe')"
+                >
                   <span class="text">Joan doe</span
                   ><img src="./icons/Joan doe.png" alt="Joan" />
                 </div>
                 <div
                   value="Nona Gafrindashvili"
+                  class="grandmaster"
                   id="c-3"
                   onclick="show_2('Nona Gafrindashvili')"
                 >
                   <span class="text">Nona Gafrindashvili</span
                   ><img src="./icons/nona gaprindashvili.png" alt="nona" />
                 </div>
-                <div value="Other" id="c-4" onclick="show_2('Other')">
+                <div
+                  value="Other"
+                  class="grandmaster"
+                  id="c-4"
+                  onclick="show_2('Other')"
+                >
                   <span class="text">Other</span
                   ><img src="./icons/Other.png" alt="Other" />
                 </div>
@@ -196,6 +208,5 @@
     </div>
     <div id="reset"></div>
     <script src="./js/register2.js"></script>
-    <script src="./js/submitForm.js"></script>
   </body>
 </html>
