@@ -94,7 +94,7 @@ closeError.onclick = function(){
 
 function done(){
     if(isSelected_1&&isSelected_2){
-        location.href = "final.html";
+        //location.href = "final.html";
         var id;
         if(localStorage.getItem("character") == document.getElementById("1").getAttribute('value')){
             id = 1;
@@ -105,6 +105,15 @@ function done(){
         }else{
             id = 4;
         }
+        var exp;
+        if(localStorage.getItem("level")=="intermediate"){
+            exp = "normal";
+        }else if(localStorage.getItem("level")=="begginer"){
+            exp = "begginer";
+        }else{
+            exp = "professional"
+        }
+
         fetch('https://chess-tournament-api.devtest.ge/api/register',{
             method: 'POST',
             headers:{
@@ -116,7 +125,7 @@ function done(){
                 "email": localStorage.getItem("email"),
                 "phone": localStorage.getItem("phone"),
                 "date_of_birth": localStorage.getItem("date"),
-                "experience_level": localStorage.getItem("level"),
+                "experience_level": exp,
                 "already_participated": localStorage.getItem("played") === "true",
                 "character_id": id
             })
@@ -131,6 +140,7 @@ function done(){
         document.getElementById("played").checked = true;
     }else{
         popupError.style.display = 'block';
+        
     }
 }
 
@@ -196,7 +206,7 @@ window.onload = function() {
         isSelected_2 = true;
     }else{
         isSelected_2 = false;
-    }
+    }    
 }
 
 

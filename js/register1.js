@@ -193,6 +193,8 @@ window.onload = function() {
     if(finished_all != null){
         document.getElementById("square-1").classList.add('finished');
         document.getElementById("square-1").classList.add('current')
-    } 
+    }
 }
+
+
 

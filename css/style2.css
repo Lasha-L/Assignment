@@ -185,7 +185,6 @@ body {
   font-size: 20px;
 }
 
-/*needs modification so green tick apears after valid input*/
 
 .form-group #correct-1{
   display: none;
@@ -199,10 +198,6 @@ body {
 .form-group #correct-4{
   display: none;
 }
-
-
-
-/************************/
 
 .form-group input.invalid{
   background-color: #FFEFEF;
