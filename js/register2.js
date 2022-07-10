@@ -2,6 +2,44 @@ document.getElementById("previous").onclick = function(){
     location.href = "register1.html"
 }
 
+//https://chess-tournament-api.devtest.ge/api/register
+const api_url = 'https://chess-tournament-api.devtest.ge/api/grandmasters';
+async function getapi(url){
+    const response = await fetch(url);
+
+    var data = await response.json();
+    console.log(data);
+    console.log(data[0][0]);
+    console.log(data[0][1]);
+    console.log(data[0][2]);
+    console.log(data[1][0]);
+    console.log(data[1][1]);
+    console.log(data[1][2]);
+    console.log(data[2][0]);
+    console.log(data[2][1]);
+    console.log(data[2][2]);
+}
+getapi(api_url);
+
+function show(data) {
+    let tab = 
+        `<tr>
+          <th>Name</th>
+          <th>Office</th>
+          <th>Position</th>
+          <th>Salary</th>
+         </tr>`;
+    
+    // Loop to access all rows 
+    for (let r of data.list) {
+        tab += `<tr> 
+        <td>${r.name} </td>
+        <td>${r.office}</td>
+        <td>${r.position}</td> 
+        <td>${r.salary}</td>          
+        </tr>`;
+    }
+}
 let isSelected_1 = false;
 let isSelected_2 = false;
 
@@ -50,7 +88,10 @@ closeError.onclick = function(){
 function done(){
     if(isSelected_1&&isSelected_2){
         location.href = "final.html";
+        console.log(document.getElementById("level"));
+        console.log(document.getElementById("character"));
         localStorage.clear();
+        document.getElementById("played").checked = true;
     }else{
         popupError.style.display = 'block';
     }
@@ -80,6 +121,24 @@ function check_2(){
     document.getElementById("not-played").checked = true;
 }
 
+function check_valid(){
+    var options1=Array.from(document.querySelectorAll('.level-choice')).map(v => v.value);
+    var options2=Array.from(document.querySelectorAll('.option-character div')).map(v => v.value);
+    for (let options in options1){
+        console.log(options1[options]);
+        if(options.value == document.getElementById("level").value){
+            isSelected_1 = true;
+            console.log("True");
+            break;
+        }
+    }
+    for (let options in options2){
+        if(options.value == document.getElementById("level").value){
+            isSelected_2 = true;
+            break;
+        }
+    }
+}
 
 window.onbeforeunload = function() {
     if(isSelected_1){
@@ -94,13 +153,12 @@ window.onbeforeunload = function() {
     else{
         localStorage.setItem("played",document.getElementById("not-played").value);
     }
-    if(document.getElementById("level").value != null && document.getElementById("character").value != null){
-        localStorage.setItem("finish_button",flag_for_submit);
-    }
+    localStorage.setItem("finish_button",flag_for_submit);
+
 }
 
 window.onload = function() {
-    
+    check_valid();
     var level_var = localStorage.getItem("level");
     var character_var = localStorage.getItem("character");
     var played_var = localStorage.getItem("played");
@@ -117,11 +175,7 @@ window.onload = function() {
     if(finish_button){
         document.getElementById("submit").innerHTML = "Done";
         document.getElementById("next-icon").style.display = 'none';
-        isSelected_1 = true;
-        isSelected_2 = true;
     }
-    console.log(document.getElementById("level").value==null);
-    console.log(document.getElementById("character").value);
 }
 
 

@@ -83,7 +83,7 @@ function validatePhone(){
 function validateDate(){
     var date_val = document.getElementById("date").value
 
-    if(!date_val.match(/^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]|(?:Jan|Mar|May|Jul|Aug|Oct|Dec)))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2]|(?:Jan|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec))\2))(?:(?:19[2-9]\d|200[0-6]))$|^(?:29(\/|-|\.)(?:0?2|(?:Feb))\3(?:(?:(?:19)(?:[2468][048]|[3579][26])|(?:(?:200)[04]))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9]|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep))|(?:1[0-2]|(?:Oct|Nov|Dec)))\4(?:(?:19[2-9]\d|200[0-6]))$/)){
+    if(date_val==0 || !date_val.match(/^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]|(?:Jan|Mar|May|Jul|Aug|Oct|Dec)))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2]|(?:Jan|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec))\2))(?:(?:19[2-9]\d|200[0-6]))$|^(?:29(\/|-|\.)(?:0?2|(?:Feb))\3(?:(?:(?:19)(?:[2468][048]|[3579][26])|(?:(?:200)[04]))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9]|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep))|(?:1[0-2]|(?:Oct|Nov|Dec)))\4(?:(?:19[2-9]\d|200[0-6]))$/)){
         document.getElementById("warning-header").innerHTML = "Invalid date of birth"
         document.getElementById("warning-text").innerHTML = "Please enter valid date of birth"
         displayError()
@@ -102,7 +102,7 @@ function validateDate(){
 }
 
 function validateForm(){
-    if(!validateName()||!validateEmail()||!validatePhone()||!validateDate){
+    if(!validateName()||!validateEmail()||!validatePhone()||!validateDate()){
         if(!field_1){
             document.getElementById("name").classList.add('invalid');
         }

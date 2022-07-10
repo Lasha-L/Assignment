@@ -1,3 +1,34 @@
+/*window.onload = function() {
+     var reseted = localStorage.getItem("reseted");
+
+    if(reseted === "reseted"){
+        localStorage.document.getElementById("reset").clear();
+        document.getElementById("reset").setAttribute('value',"reset");
+        console.log(document.getElementById("reset").value);
+        document.getElementById("played").checked = false;
+        document.getElementById("not-played").checked = false;
+    }
+   
+    if (level_var !== null) document.getElementById("level").value = level_var; 
+    if (character_var !== null) document.getElementById("character").value = character_var;
+    if(played_var == "yes"){
+      document.getElementById("played").checked = true;
+    }
+    else{
+        document.getElementById("not-played").checked = true;
+    }
+    if(finish_button){
+        document.getElementById("submit").innerHTML = "Done";
+        document.getElementById("next-icon").style.display = 'none';
+        isSelected_1 = true;
+        isSelected_2 = true;
+    }
+}
+*/
+
+
+
+
 /*
 const level_choice1=document.getElementById("l-1");
 const level_choice2=document.getElementById("l-2");
